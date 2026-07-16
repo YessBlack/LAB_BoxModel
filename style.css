@@ -4,6 +4,149 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #22086f;
+  --text-secondary: #a1a1a1;
+  --primary-color: #9a71f8;
+  --secondary-color: #4C1D95;
+  --tertiary-color: #F5F3FF;
+  --neutral-color: #1F2937;
+  --background-color: #e5ddf98e;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 15px;
+  color: var(--neutral-color);
+  background-attachment: fixed;
+}
+
+.header {
+  text-align: center;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.card {
+  width: 400px;
+  height: 620px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.headerCard {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  z-index: 0;
+}
+
+.photoBox {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.headerCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      transparent 35%,
+      white 62%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardHeader h1 {
+  font-size: 24px;
+  line-height: 2.3rem;
+  font-weight: 800;
+}
+
+.cardHeader p {
+  color: var(--secondary-color);
+  font-size: 13px;
+}
+
+.cardInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  place-content: center;
+  justify-content: space-evenly;
+  font-size: 14px;
+}
+
+.infoContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+}
+
+.infoContainer i {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--secondary-color);
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.cardFooter {
+  padding: 24px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--background-color);
+  display: flex;
+  border-radius: 16px;
+  position: relative;
+}
+
+.cardFooter i {
+  color: var(--text-secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  opacity: .5;
 }
